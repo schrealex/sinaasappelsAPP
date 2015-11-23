@@ -1,0 +1,67 @@
+html, body {
+	background-color: #000;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, sans-serif;
+}
+
+li {
+	list-style-type: none;
+}
+
+.movieList {
+	cursor: pointer;
+}
+
+.movieList .poster img {
+	width: 100px;
+	display: inline-block;
+}
+
+.poster {
+	display: inline-block;
+}
+
+.information {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.searchContainer {
+	padding: 5px;
+}
+
+.searchContainer input {
+	background-color: inherit;
+	width: 500px;
+}
+
+.star-rating {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+.star-rating .star {
+	padding: 1px;
+	color: #fff;
+	font-size: 20px;
+	text-shadow: .05em .05em #aaa;
+	list-style-type: none;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.star-rating .star.filled {
+	color: #fd0;
+}
+
+.star-rating.readonly .star.filled {
+	color: #666;
+}
+
+.buttonContainer {
+	width: 100%;
+}
