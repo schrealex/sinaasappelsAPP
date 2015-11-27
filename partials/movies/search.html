@@ -1,0 +1,10 @@
+<div ng-controller="SearchMovieController as searchCtrl">
+	<ul class="movieList" ng-repeat="movie in movies">
+		<li>
+			<div class="poster" ng-show="movie.poster_path">
+	    		<img ng-src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}" />
+	    	</div>
+	    	<span>{{movie.title}} | {{movie.release_date | date:"yyyy" }} </span>
+	    </li>
+	</ul>
+</div>

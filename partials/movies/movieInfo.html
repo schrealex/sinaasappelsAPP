@@ -1,0 +1,28 @@
+<div ng-controller="MovieInfoController">
+	<div class="poster">
+    	<img ng-src="{{movie.Poster}}" />
+	</div>
+    <div class="information">
+    	<h1>{{movie.Title}}</h1><h4>({{movie.Year}})</h4>
+        <h4>{{movie.Runtime}} | {{movie.Genre}}</h4>
+        <hr>
+        <div>
+        	Your rating
+            <div ng-controller="RatingsController as rating" class="container">
+            	<span star-rating ng-model="rating.rating" max="10" on-rating-select="rating.rateFunction(rating)"></span> {{rating.rating}}/10
+            </div>
+		</div>
+		<p>Ratings {{movie.imdbRating}}/10 from {{movie.imdbVotes}} votes</p>
+        <hr>
+        <p>{{movie.plot}}</p>
+        <h4>Directors</h4><p>{{movie.Director}}</p>
+        <h4>Writers</h4><p>{{movie.Writer}}</p>
+        <h4>Actors</h4><p>{{movie.Actors}}</p>
+        
+        <!--  http://www.myapifilms.com/ : http://www.myapifilms.com/imdb?idIMDB=tt0993846&format=JSON&aka=0&business=0&seasons=0&seasonYear=0&technical=0&lang=en-us&actors=S&biography=0&trailer=0&uniqueName=0&filmography=0&bornDied=0&starSign=0&actorActress=0&actorTrivia=0&movieTrivia=0&awards=0&moviePhotos=N&movieVideos=N&similarMovies=0 -->
+	</div>	
+	
+	<div class="buttonContainer">
+		<a href="/#/" class="btn">Back</a>
+	</div>
+</div>

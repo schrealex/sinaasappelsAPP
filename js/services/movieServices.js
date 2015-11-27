@@ -2,21 +2,21 @@
 
 var movieServices = angular.module('movieServices', []);
 
-//movieServices.factory('Movie', ['$http', function($http) { 
-//    return $http.get('json/movies.json') 
-//              .success(function(data) { 
-//                return data; 
-//              }) 
-//              .error(function(err) { 
-//                return err; 
-//              }); 
-//}]);
+movieServices.factory('Movies', ['$http', function($http) { 
+    return $http.get('json/movies.json') 
+              .success(function(data) { 
+                return data; 
+              }) 
+              .error(function(err) { 
+                return err; 
+              }); 
+}]);
 
-movieServices.factory('MovieInfo', ['$http', function MovieInfo($http) {
-    	//http://www.omdbapi.com/?t=The+Matrix&y=&plot=short&r=json
-       	return function(title, plot) {
-       		var url = 'http://www.omdbapi.com/?t=' + title + '&plot=' + plot + '&r=json';
-       		console.log(url);
+movieServices.factory('SearchMovies', ['$http', 
+    function SearchMovies($http) {
+       	return function(title, appelsAPPConfig) {
+       	    	var searchTitle = title.replace(/ /g, '%20');
+       		var url = "http://api.themoviedb.org/3/search/movie?api_key=" + appelsAPPConfig.apiKey + "&query=" + searchTitle;
             return $http.get(url)
             .success(function(data) {
                 return data; 
@@ -25,5 +25,20 @@ movieServices.factory('MovieInfo', ['$http', function MovieInfo($http) {
                 return err; 
             }); 
         };
-	}
+    }
+]);
+
+movieServices.factory('MovieInfo', ['$http', 
+    function MovieInfo($http) {
+       	return function(title, plot) {
+       		var url = 'http://www.omdbapi.com/?i=' + title + '&plot=' + plot + '&r=json';
+            return $http.get(url)
+            .success(function(data) {
+                return data; 
+            }) 
+            .error(function(err) {
+                return err; 
+            }); 
+        };
+    }
 ]);

@@ -64,19 +64,21 @@ function starRating() {
                 scope._rating = 0;
                 scope.ratingValue = param;
                 scope.mouseHover({
-            	param: param
+                	param: param
                 });
-	};
+        	};
 
-	scope.isolatedMouseLeave = function (param) {
-	    if ($scope.readOnly == 'true') return;
-
-	    scope._rating = $scope.rating;
-	    scope.ratingValue = 0;
-	    scope.mouseLeave({
-		param: param
-	    });
-	};
+			scope.isolatedMouseLeave = function (param) {
+			    if (scope.readOnly == 'true') {
+			    	return;
+			    }
+		
+			    scope._rating = scope.rating;
+			    scope.ratingValue = 0;
+			    scope.mouseLeave({
+			    	param: param
+			    });
+			};
         }
     };
 }    
