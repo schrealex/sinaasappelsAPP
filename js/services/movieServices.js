@@ -17,6 +17,7 @@ movieServices.factory('SearchMovies', ['$http',
        	return function(title, appelsAPPConfig) {
        	    	var searchTitle = title.replace(/ /g, '%20');
        		var url = "http://api.themoviedb.org/3/search/movie?api_key=" + appelsAPPConfig.apiKey + "&query=" + searchTitle;
+       		console.log(url);
             return $http.get(url)
             .success(function(data) {
                 return data; 

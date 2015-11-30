@@ -1,9 +1,18 @@
 <div ng-controller="SearchMovieController as searchCtrl">
+	<div class="searchContainer">
+		<input type="text" ng-model="search" ng-change="change()" class="search-query" id="movies_search" placeholder="Search" onclick="select()" autofocus />
+	</div>
 	<ul class="movieList" ng-repeat="movie in movies">
-		<li>
-			<div class="poster" ng-show="movie.poster_path">
-	    		<img ng-src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}" />
+		<li class="fadeInDown animated">
+			<div class="poster zoomIn animated">
+	    		<img ng-src="{{ movie.poster_path.length ? 'https://image.tmdb.org/t/p/w185/' + movie.poster_path : '/images/posterNotFound.png' }}" />
 	    	</div>
+	    	<span>{{movie.title}} | {{movie.release_date | date:"yyyy" }} </span>
+	    </li>
+	</ul>
+	
+	<ul class="related movieList" ng-repeat="movie in related">
+		<li class="fadeInDown animated">
 	    	<span>{{movie.title}} | {{movie.release_date | date:"yyyy" }} </span>
 	    </li>
 	</ul>

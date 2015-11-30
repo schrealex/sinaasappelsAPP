@@ -14,7 +14,7 @@ var appelsAPP = angular.module('appelsAPP', [
 appelsAPP.config(['$routeProvider', 
        function($routeProvider) {
 	$routeProvider
-	.when('/', {
+	.when('/movies', {
 	    templateUrl : 'partials/movies/movies.html',
 	    controller : 'MoviesController'
 	})
@@ -22,7 +22,7 @@ appelsAPP.config(['$routeProvider',
 	    templateUrl : 'partials/movies/movieInfo.html',
 	    controller : 'MovieInfoController'
 	})
-	.when('/search/:title', {
+	.when('/', {
 	    templateUrl : 'partials/movies/search.html',
 	    controller : 'SearchMovieController'
 	})
