@@ -29,6 +29,25 @@ movieServices.factory('SearchMovies', ['$http',
     }
 ]);
 
+movieServices.factory('SearchOmdbApiMovies', ['$http', 
+    function SearchOmdbApiMovies($http) {
+        return function(title, appelsAPPConfig) {
+              var searchTitle = title.replace(/ /g, '%20');
+          var url = "http://www.omdbapi.com/?&s=" + searchTitle;
+          console.log(url);
+            return $http.get(url)
+            .success(function(data) {
+                console.log('Data: ' + data);
+                return data; 
+            }) 
+            .error(function(error) {
+              console.log('Error: ' + error);
+                return error; 
+            }); 
+        };
+    }
+]);
+
 movieServices.factory('MovieInfo', ['$http', 
     function MovieInfo($http) {
        	return function(title, plot) {

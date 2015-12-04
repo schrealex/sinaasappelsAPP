@@ -2,10 +2,10 @@
 
 var searchMovieController = angular.module('searchMovieController', []);
 
-searchMovieController.controller('SearchMovieController', ['$scope', '$routeParams', 'SearchMovies', 'appelsAPPConfig', 
-    function($scope, $routeParams, SearchMovies, appelsAPPConfig) {
+searchMovieController.controller('SearchMovieController', ['$scope', '$location', 'SearchOmdbApiMovies', 'appelsAPPConfig', 
+    function($scope, $location, SearchOmdbApiMovies, appelsAPPConfig) {
 	
-	 	var pendingTask;
+		var pendingTask;
 		
 		$scope.change = function() {
 			if (pendingTask) {
@@ -15,10 +15,16 @@ searchMovieController.controller('SearchMovieController', ['$scope', '$routePara
 	    };
 	    
 	    function fetch() {
-	    	SearchMovies($scope.search, appelsAPPConfig)
+	    	SearchOmdbApiMovies($scope.search, appelsAPPConfig)
 	    	.success(function(data) {
-	    		$scope.movies = data.results; 
+	    		console.log(data);
+	    		$scope.movies = data.Search; 
 	    	});
+	    }
+	    
+	    $scope.go = function(path) {
+			console.log(path)
+        	$location.path(path);
 	    }
 	    
 	    $scope.select = function() {

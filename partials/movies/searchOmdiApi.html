@@ -1,15 +1,17 @@
 <div ng-controller="SearchMovieController as searchCtrl">
+
 	<div class="searchContainer">
+		Search OMDBAPI
 		<input type="text" ng-model="search" ng-change="change()" class="search-query" id="movies_search" placeholder="Search" onclick="select()" autofocus />
 	</div>
-	
+
 	<div class="movieListContainer">
 		<ul class="movieList" ng-repeat="movie in movies">
 			<li ng-click="go('/detail/' + movie.imdbID)" class="fadeInUp animated">
 				<div class="poster zoomIn animated">
-		    		<img ng-src="{{ movie.poster_path.length ? 'https://image.tmdb.org/t/p/w185/' + movie.poster_path : '/images/posterNotFound.png' }}" />
+		    		<img ng-src="{{ movie.Poster != 'N/A' ? movie.Poster : '/images/posterNotFound.png' }}" />
 		    	</div>
-		    	<span>{{movie.title}} | {{movie.release_date | date:"yyyy" }} </span>
+		    	<span>{{movie.Title}} | {{movie.Year }} </span>
 		    </li>
 		</ul>
 	</div>

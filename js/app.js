@@ -23,6 +23,10 @@ appelsAPP.config(['$routeProvider',
 	    controller : 'MovieInfoController'
 	})
 	.when('/', {
+	    templateUrl : 'partials/movies/searchOmdiApi.html',
+	    controller : 'SearchMovieController'
+	})
+	.when('/search', {
 	    templateUrl : 'partials/movies/search.html',
 	    controller : 'SearchMovieController'
 	})
