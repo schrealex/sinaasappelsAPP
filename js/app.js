@@ -8,7 +8,9 @@ var appelsAPP = angular.module('appelsAPP', [
 	'ratingsController',
 	'searchMovieController',
 	'settingService',
-	'movieServices'
+	'movieServices',
+	'gamesController',
+	'gameService'
 ]);
 
 appelsAPP.config(['$routeProvider', 
@@ -29,6 +31,10 @@ appelsAPP.config(['$routeProvider',
 	.when('/search', {
 	    templateUrl : 'partials/movies/search.html',
 	    controller : 'SearchMovieController'
+	})
+	.when('/games', {
+	    templateUrl : 'games/games.html',
+	    controller : 'GamesController'
 	})
 	.otherwise({
 	    redirectTo: '/'
