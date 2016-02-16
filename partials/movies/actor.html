@@ -1,3 +1,24 @@
 <div ng-controller="ActorDetailController">
-	<a href="/" class="btn">Back</a>
+	<div class="infoContainer">
+		<div class="poster">
+			<img ng-src="{{ actor.profile_path.length ? 'https://image.tmdb.org/t/p/w185/' + actor.profile_path : '/images/posterNotFound.png' }}" />
+		</div>
+		<div class="information">
+			<h1 class="slideInDown animated">{{actor.name}}</h1><h4>Born {{actorDetail.birthday | date: 'd MMMM yyyy'}} in {{actorDetail.place_of_birth}}</h4>
+			<span>{{actorDetail.biography}}</span>
+			<hr>
+			<ul>
+				<li ng-repeat="movie in movieCredits.cast">
+					<div class="poster">
+						<img ng-src="{{ movie.poster_path.length ? 'https://image.tmdb.org/t/p/w185/' + movie.poster_path : '/images/posterNotFound.png' }}" />
+					</div>
+					<span>{{movie.title}} | {{movie.release_date | date: 'yyyy'}}</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="buttonContainer">
+			<a href="/#/" class="btn"><i class="fa fa-arrow-circle-left"></i> BACK</a>
+		</div>
+	</div>
 </div>

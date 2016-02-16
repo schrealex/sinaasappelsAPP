@@ -30,12 +30,17 @@ li {
 }
 
 .information {
+	margin: 0 0 0 10px;
 	width: 50%;
 	display: inline-block;
 	vertical-align: top;
 }
 
-.searchContainer {
+.information h1 {
+	margin-top: 0;
+}
+
+.searchContainer, .infoContainer {
 	margin: 10px 0 10px 40px;
 }
 

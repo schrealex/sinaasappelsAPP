@@ -6,9 +6,12 @@ var appelsAPP = angular.module('appelsAPP', [
 	'moviesController',
 	'movieInfoController',
 	'ratingsController',
+	'actorsController',
+	'actorDetailController',
 	'searchMovieController',
 	'settingService',
 	'movieServices',
+	'actorServices',
 	'gamesController',
 	'gameService'
 ]);
@@ -23,6 +26,10 @@ appelsAPP.config(['$routeProvider',
 	.when('/detail/:imdbID', {
 	    templateUrl : 'partials/movies/movieInfo.html',
 	    controller : 'MovieInfoController'
+	})
+	.when('/actor/:name', {
+		templateUrl : 'partials/movies/actor.html',
+		controller : 'ActorDetailController'
 	})
 	.when('/', {
 	    templateUrl : 'partials/movies/searchOmdiApi.html',

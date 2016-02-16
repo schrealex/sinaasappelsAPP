@@ -17,8 +17,7 @@ searchMovieController.controller('SearchMovieController', ['$scope', '$location'
 	    function fetch() {
 	    	SearchOmdbApiMovies($scope.search, appelsAPPConfig)
 	    	.success(function(data) {
-	    		console.log(data);
-	    		$scope.movies = data.Search; 
+	    		$scope.movies = data.Search;
 	    	});
 	    }
 	    
