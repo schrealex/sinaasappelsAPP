@@ -62,3 +62,19 @@ movieServices.factory('MovieInfo', ['$http',
         };
     }
 ]);
+
+movieServices.factory('MovieInfo2', ['$http',
+    function MovieInfo2($http) {
+        return function(movieId, appelsAPPConfig) {
+            var url = "http://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + appelsAPPConfig.apiKey;
+            console.log(url);
+            return $http.get(url)
+                .success(function(data) {
+                    return data;
+                })
+                .error(function(err) {
+                    return err;
+                });
+        };
+    }
+]);

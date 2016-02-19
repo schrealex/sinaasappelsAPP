@@ -24,7 +24,7 @@
 				<h4>Actors</h4>
 				<ul style="padding-left: 0">
 					<li ng-repeat="actor in movie.Actors.split(',')" style="display: inline;">
-						<span ng-click="actorsCtrl.go('/actor/' + actor.trim())">{{actor}}, </span>
+						<span ng-click="actorsCtrl.go('/actor/' + actor.trim())">{{actor}}{{$last ? '' : ', '}}</span>
 					</li>
 				</ul>
 			</div>
