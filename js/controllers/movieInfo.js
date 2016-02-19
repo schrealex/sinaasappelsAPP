@@ -9,16 +9,4 @@ movieInfoController.controller('MovieInfoController', ['$scope', '$routeParams',
 			$scope.movie =  data; 
 		});
 	}
-//    	var movieId = $routeParams.imdbID;
-//    
-//    	var movies = Movies.get(function(Movies) {
-//    		$scope.movies = movies;
-//    	});
-//    
-//	    $.each(movies, function() {
-//	    	if(this.imdbID == movieId) {
-//	    		$scope.movie = this;
-//	    	}
-//	    });
-//	}
 ]);
