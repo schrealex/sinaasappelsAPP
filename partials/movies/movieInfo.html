@@ -7,30 +7,41 @@
 		<div class="information">
 			<h1 class="slideInDown animated">{{movie.Title}}</h1><h4>({{movie.Year}})</h4>
 			<h4>{{movie.Runtime}} | {{movie.Genre}}</h4>
+
 			<hr>
 
-			<div class="alert alert-success"> <span class="label label-info">Star Rating: Read/Write</span>
-
-				<div star-rating rating="starRating" read-only="false" max-rating="10" click="click(param)" mouse-hover="mouseHover(param)" mouse-leave="mouseLeave(param)"></div>
-				<div> <span class="label label-primary">Star Rating: {{starRating}}</span>
-					<span class="label label-primary">Hover Rating: {{hoverRating}}</span>
-
+			<div class="ratings-wrapper">
+				<div class="imdb-rating">
+					<div class="ratingValue">
+						<i class="fa fa-star"></i><strong class="rating"><span>{{movie.imdbRating}}</span></strong><span class="grey">/10</span>
+					</div>
+					<p class="votes">{{movie.imdbVotes}}</p>
+				</div>
+				<div class="own-rating">
+					<span class="label label-default">Own rating</span>
+					<div star-rating rating="starRating" read-only="false" max-rating="10" click="click(param)" mouse-hover="mouseHover(param)" mouse-leave="mouseLeave(param)"></div>
 				</div>
 			</div>
 
-			<p>Ratings {{movie.imdbRating}}/10 from {{movie.imdbVotes}} votes</p>
 			<hr>
-			<p>{{movie.Plot}}</p>
-			<h4>Directors</h4><p>{{movie.Director}}</p>
-			<h4>Writers</h4><p>{{movie.Writer}}</p>
+			<div class="plot">{{movie.Plot}}</div>
 
-			<div ng-controller="ActorsController as actorsCtrl">
-				<h4>Actors</h4>
-				<ul style="padding-left: 0">
-					<li ng-repeat="actor in movie.Actors.split(',')" style="display: inline;">
-						<span ng-click="actorsCtrl.go('/actor/' + actor.trim())">{{actor}}{{$last ? '' : ', '}}</span>
-					</li>
-				</ul>
+			<div class="credits-item">
+				<h4 class="inline">Directors:</h4><span>{{movie.Director}}</span>
+			</div>
+			<div class="credits-item">
+				<h4 class="inline">Writers:</h4><span>{{movie.Writer}}</span>
+			</div>
+
+			<div class="credits-item" ng-controller="ActorsController as actorsCtrl">
+				<h4 class="inline">Actors:</h4>
+				<span>
+					<ul style="padding-left: 0; display: inline;">
+						<li ng-repeat="actor in movie.Actors.split(',')" style="display: inline;">
+							<span ng-click="actorsCtrl.go('/actor/' + actor.trim())">{{actor}}{{$last ? '' : ', '}}</span>
+						</li>
+					</ul>
+				</span>
 			</div>
 
 			<!--  http://www.myapifilms.com/ : http://www.myapifilms.com/imdb?idIMDB=tt0993846&format=JSON&aka=0&business=0&seasons=0&seasonYear=0&technical=0&lang=en-us&actors=S&biography=0&trailer=0&uniqueName=0&filmography=0&bornDied=0&starSign=0&actorActress=0&actorTrivia=0&movieTrivia=0&awards=0&moviePhotos=N&movieVideos=N&similarMovies=0 -->
