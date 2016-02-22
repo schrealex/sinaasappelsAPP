@@ -13,12 +13,12 @@ ratingsController.controller('RatingsController', ['$scope',
 
         $scope.mouseHover = function (param) {
             console.log('mouseHover(' + param + ')');
-            $scope.hoverRating1 = param;
+            $scope.hoverRating = param;
         };
 
         $scope.mouseLeave = function (param) {
             console.log('mouseLeave(' + param + ')');
-            $scope.hoverRating1 = param + '*';
+            $scope.hoverRating = param + '*';
         };
     }
 ]);
