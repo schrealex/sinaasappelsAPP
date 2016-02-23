@@ -5,6 +5,9 @@ html, body {
 	padding: 0;
 	font-family: Verdana, sans-serif;
 }
+h3 {
+	color: #bbb;
+}
 
 h4 {
 	color: #bbb;
@@ -33,15 +36,31 @@ li {
 	display: inline-block;
 }
 
+.backdrop {
+	width: 1000px;
+	height: 400px;
+	margin: 10px 0 10px 40px;
+	overflow: hidden;
+}
+
 .poster {
 	display: inline-block;
 }
 
 .information {
 	margin: 0 0 0 10px;
-	width: 50%;
+	width: 60%;
 	display: inline-block;
 	vertical-align: top;
+}
+
+.information .movie-title {
+	display: inline;
+	margin-right: 10px;
+}
+
+.information .movie-year {
+	display: inline;
 }
 
 .credits-item {
@@ -65,15 +84,27 @@ h4.inline {
 	display: inline;
 }
 
+.infoContainer {
+	max-width: 1032px;
+}
+
 .searchContainer, .infoContainer {
 	margin: 10px 0 10px 40px;
 }
 
 .details {
 	margin: 0 0 0 10px;
-	width: 50%;
+	width: 60%;
 	display: inline-block;
 	vertical-align: top;
+}
+
+.details h1 {
+	margin-top: 0;
+}
+
+ul.knownFor {
+	padding-left: 0;
 }
 
 .knownFor li {
@@ -83,7 +114,7 @@ h4.inline {
 .knownFor div {
 	width: 185px;
 	text-align: center;
-	margin: 0 10px 10px 10px;
+	margin: 0 10px 10px 0;
 }
 
 .knownFor img {
@@ -160,4 +191,8 @@ h4.inline {
 
 .buttonContainer {
 	width: 100%;
+}
+
+.buttonContainer a {
+	padding-left: 0;
 }

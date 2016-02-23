@@ -1,11 +1,10 @@
 <div ng-controller="MovieInfoController">
-
 	<div class="infoContainer">
 		<div class="poster">
 			<img ng-src="{{movie.Poster}}" />
 		</div>
 		<div class="information">
-			<h1 class="slideInDown animated">{{movie.Title}}</h1><h4>({{movie.Year}})</h4>
+			<h1 class="movie-title slideInDown animated">{{movie.Title}}</h1><h3 class="movie-year">({{movie.Year}})</h3>
 			<h4>{{movie.Runtime}} | {{movie.Genre}}</h4>
 
 			<hr>
@@ -18,7 +17,7 @@
 					<p class="votes">{{movie.imdbVotes}}</p>
 				</div>
 				<div class="own-rating">
-					<span class="label label-default">Own rating</span>
+					<span class="label label-default">Own rating: {{starRating}}</span>
 					<div star-rating rating="starRating" read-only="false" max-rating="10" click="click(param)" mouse-hover="mouseHover(param)" mouse-leave="mouseLeave(param)"></div>
 				</div>
 			</div>
