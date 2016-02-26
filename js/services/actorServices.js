@@ -50,3 +50,19 @@ actorServices.factory('MovieCredits', ['$http',
         };
     }
 ]);
+
+actorServices.factory('MovieImages', ['$http',
+    function MovieImages($http) {
+        return function(movieId, appelsAPPConfig) {
+            var url = "http://api.themoviedb.org/3/movie/" + movieId + "/images" +  "?api_key=" + appelsAPPConfig.apiKey;
+            console.log(url);
+            return $http.get(url)
+                .success(function(response) {
+                    return response;
+                })
+                .error(function(error) {
+                    return error;
+                });
+        };
+    }
+]);
