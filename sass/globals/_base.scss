@@ -1,0 +1,37 @@
+// Basic colors
+$white: #FFF;
+$black: #000;
+$grey: #6b6b6b;
+$silver: #bbb;
+$gold: #FFD600;
+
+// Body background
+$body-bg: $black;
+
+// Error colors
+$error-lighter-red: #ffbdb8;
+$error-red: #e84526;
+$error-darker-red: #9e1f00;
+$error-lighter-yellow: #ffe8ad;
+$error-yellow: #feb800;
+$error-darker-yellow: #b99b00;
+$error-lighter-green: #ccffcc;
+$error-green: #2daa1e;
+$error-darker-green: #0e9000;
+
+// Fonts
+$default-font: 'Verdana', 'Arial', sans-serif;
+$title-font: 'Arial Black', sans-serif;
+
+$font-size: 14;
+$base-fs: $font-size;
+
+$small-fs: 11;
+$normal-fs: 13;
+$title-fs: 24;
+
+// Padding
+$base-padding: 0;
+
+// Margin
+$base-margin: 0;

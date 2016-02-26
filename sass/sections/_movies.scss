@@ -1,0 +1,11 @@
+.movieList {
+  cursor: pointer;
+
+  .poster {
+    display: inline-block;
+
+    img {
+      width: 100px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+html, body{
+	background-color: $body-bg;
+	color: $white;
+	font-family: $default-font;
+	font-size: #{$base-fs}px;
+	margin: $base-margin;
+	padding: $base-padding;
+
+	height: 100%;
+}
+
+input {
+	color: $black;
+}
+
+li {
+	list-style-type: none;
+}

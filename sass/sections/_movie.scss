@@ -1,0 +1,39 @@
+.info-container {
+  margin: 10px 0 10px 40px;
+
+  .poster {
+    display: inline-block;
+  }
+  .information {
+    margin: 0 0 0 10px;
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+
+    .movie-title {
+      margin: 0;
+      display: inline;
+    }
+
+    .movie-year {
+      display: inline;
+    }
+
+    .inline {
+      display: inline;
+      padding-right: 5px;
+    }
+
+    .plot {
+      margin: 20px 0;
+    }
+
+    .ratings-wrapper {
+      height: 60px;
+    }
+
+    .credits-item {
+      font-size: #{$normal-fs}px;
+    }
+  }
+}

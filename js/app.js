@@ -24,7 +24,7 @@ appelsAPP.config(['$routeProvider',
 	    controller : 'MoviesController'
 	})
 	.when('/detail/:imdbID', {
-	    templateUrl : 'partials/movies/movieInfo.html',
+	    templateUrl : 'partials/movies/movie.html',
 	    controller : 'MovieInfoController'
 	})
 	.when('/actor/:name', {

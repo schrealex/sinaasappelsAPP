@@ -1,163 +1,97 @@
 html, body {
-	background-color: #000;
-	color: #fff;
-	margin: 0;
-	padding: 0;
-	font-family: Verdana, sans-serif;
-}
+  background-color: #000;
+  color: #FFF;
+  font-family: "Verdana", "Arial", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  height: 100%; }
 
-h4 {
-	color: #bbb;
-	font-size: 13px;
-	margin: 0.35em 0 0.25em;
-	padding: 0;
-	font-weight: bold;
-}
-
-.title {
-	font-family: Arial Black;
-	font-size: 24px;
-	margin: 20px 0 20px 40px;
-}
+input {
+  color: #000; }
 
 li {
-	list-style-type: none;
-}
+  list-style-type: none; }
+
+h1 {
+  font-family: "Arial Black", sans-serif;
+  font-size: 1.71429em;
+  line-height: 1.5em;
+  margin: 20px 0 20px 40px;
+  color: #bbb; }
+
+h2 {
+  font-family: "Verdana", "Arial", sans-serif;
+  font-size: 1.42857em;
+  line-height: 1.6em;
+  color: #bbb; }
+
+h3 {
+  font-family: "Verdana", "Arial", sans-serif;
+  font-size: 1.28571em;
+  line-height: 1.33333em;
+  color: #bbb; }
+
+h4 {
+  font-family: "Verdana", "Arial", sans-serif;
+  font-size: 0.92857em;
+  line-height: 1.23077em;
+  color: #bbb;
+  font-weight: bold; }
+
+.search-container {
+  margin: 10px 0 10px 40px; }
 
 .movieList {
-	cursor: pointer;
-}
+  cursor: pointer; }
+  .movieList .poster {
+    display: inline-block; }
+    .movieList .poster img {
+      width: 100px; }
 
-.movieList .poster img {
-	width: 100px;
-	display: inline-block;
-}
-
-.poster {
-	display: inline-block;
-}
-
-.information {
-	margin: 0 0 0 10px;
-	width: 50%;
-	display: inline-block;
-	vertical-align: top;
-}
-
-.credits-item {
-	font-size: 13px;
-}
-
-h4.inline {
-	display: inline;
-	padding-right: 5px;
-}
-
-.information h1 {
-	margin-top: 0;
-}
-
-.information .plot {
-	margin: 20px 0;
-}
-
-.information h4 .inline {
-	display: inline;
-}
-
-.searchContainer, .infoContainer {
-	margin: 10px 0 10px 40px;
-}
-
-.details {
-	margin: 0 0 0 10px;
-	width: 50%;
-	display: inline-block;
-	vertical-align: top;
-}
-
-.knownFor li {
-	display: inline-block;
-}
-
-.knownFor div {
-	width: 185px;
-	text-align: center;
-	margin: 0 10px 10px 10px;
-}
-
-.knownFor img {
-	width: 185px;
-	height: 250px;
-}
-
-.searchContainer input {
-	background-color: inherit;
-	width: 500px;
-}
-
-.movieListContainer {
-
-}
-
-.ratings-wrapper {
-	height: 60px;
-}
+.info-container {
+  margin: 10px 0 10px 40px; }
+  .info-container .poster {
+    display: inline-block; }
+  .info-container .information {
+    margin: 0 0 0 10px;
+    width: 50%;
+    display: inline-block;
+    vertical-align: top; }
+    .info-container .information .movie-title {
+      margin: 0;
+      display: inline; }
+    .info-container .information .movie-year {
+      display: inline; }
+    .info-container .information .inline {
+      display: inline;
+      padding-right: 5px; }
+    .info-container .information .plot {
+      margin: 20px 0; }
+    .info-container .information .ratings-wrapper {
+      height: 60px; }
+    .info-container .information .credits-item {
+      font-size: 13px; }
 
 .imdb-rating {
-	width: 100px;
-	float: left;
-}
-
-.imdb-rating i {
-	font-size: 24px;
-	color: #FFD600;
-}
-
-.imdb-rating .rating {
-	font-size: 24px;
-}
-
-.imdb-rating .grey {
-	color: #6b6b6b;
-	font-size: 10px;
-}
-
-.imdb-rating .votes {
-	font-size: 10px;
-}
+  width: 100px;
+  float: left; }
+  .imdb-rating i {
+    font-size: 24px;
+    color: #FFD600; }
+  .imdb-rating .rating {
+    font-size: 24px; }
+  .imdb-rating .grey {
+    color: #6b6b6b;
+    font-size: 10px; }
+  .imdb-rating .votes {
+    font-size: 10px; }
 
 .own-rating {
-	width: 260px;
-	padding-left: 15px;
-	border-left: 1px solid #6b6b6b;
-	float: left;
-}
-
-.star-rating {
-	margin: 0;
-	padding: 0;
-	display: inline-block;
-}
-
-.star-rating .star {
-	padding: 1px;
-	color: #fff;
-	font-size: 20px;
-	text-shadow: .05em .05em #aaa;
-	list-style-type: none;
-	display: inline-block;
-	cursor: pointer;
-}
-
-.star-rating .star.filled {
-	color: #fd0;
-}
-
-.star-rating.readonly .star.filled {
-	color: #666;
-}
+  width: 260px;
+  padding-left: 15px;
+  border-left: 1px solid #6b6b6b;
+  float: left; }
 
 .buttonContainer {
-	width: 100%;
-}
+  width: 100%; }

@@ -1,0 +1,29 @@
+.imdb-rating {
+  width: 100px;
+  float: left;
+
+  i {
+    font-size: 24px;
+    color: #FFD600;
+  }
+
+  .rating {
+    font-size: 24px;
+  }
+  
+  .grey {
+    color: $grey;
+    font-size: 10px;
+  }
+
+  .votes {
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+
+

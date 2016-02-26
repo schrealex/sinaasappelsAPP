@@ -1,0 +1,45 @@
+// H1
+// 
+// Header 1
+
+h1 {
+	font-family: $title-font;
+	font-size: rs(24, $base-fs);
+	line-height: rs(36, 24);
+	margin: 20px 0 20px 40px;
+	color: $silver;
+}
+
+// H2
+// 
+// Header 2
+
+h2 {
+	font-family: $default-font;
+	font-size: rs(20, $base-fs);
+	line-height: rs(32, 20);
+	color: $silver;
+}
+
+// H3
+//
+// Header 3
+
+h3 {
+	font-family: $default-font;
+	font-size: rs(18, $base-fs);
+	line-height: rs(24, 18);
+	color: $silver;
+}
+
+// H4
+//
+// Header 4
+
+h4 {
+	font-family: $default-font;
+	font-size: rs(13, $base-fs);
+	line-height: rs(16, 13);
+	color: $silver;
+	font-weight: bold;
+}

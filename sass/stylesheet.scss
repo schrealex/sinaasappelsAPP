@@ -1,0 +1,14 @@
+@import "globals/base"; //Globale variables
+@import "globals/functions";
+
+@import "shared/_layout"; //Basic layout styling
+@import "shared/_typography";
+
+@import "sections/header";
+@import "sections/search-container";
+@import "sections/movies";
+@import "sections/movie";
+@import "sections/imdb-rating";
+@import "sections/own-rating";
+
+@import "sections/button-container";
