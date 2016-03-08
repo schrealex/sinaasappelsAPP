@@ -52,6 +52,7 @@ movieServices.factory('MovieInfo', ['$http',
     function MovieInfo($http) {
        	return function(title, plot) {
        		var url = 'http://www.omdbapi.com/?i=' + title + '&plot=' + plot + '&r=json';
+            console.debug(url);
             return $http.get(url)
             .success(function(data) {
                 return data; 
@@ -67,7 +68,7 @@ movieServices.factory('MovieInfo2', ['$http',
     function MovieInfo2($http) {
         return function(movieId, appelsAPPConfig) {
             var url = "http://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + appelsAPPConfig.apiKey;
-            console.log(url);
+            console.debug(url);
             return $http.get(url)
                 .success(function(data) {
                     return data;

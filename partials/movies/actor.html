@@ -1,16 +1,16 @@
 <div ng-controller="ActorDetailController">
 
 	<div class="backdrop">
-		<img ng-repeat="backdrop in movieBackdrops" ng-src="{{ backdrop.file_path ? 'https://image.tmdb.org/t/p/w1000' + backdrop.file_path : '' }}" />
+		<img ng-repeat="backdrop in movieBackdrops" ng-class='{shown:$first }' ng-src="{{ backdrop.file_path ? 'https://image.tmdb.org/t/p/w1000' + backdrop.file_path : '' }}" />
 	</div>
 
-	<div class="info-container">
+	<div class="info-container actor">
 		<div class="poster">
 			<img ng-src="{{ actor.profile_path.length ? 'https://image.tmdb.org/t/p/w185' + actor.profile_path : '/images/posterNotFound.png' }}"  />
 		</div>
 		<div class="details">
 			<h1 class="slideInDown animated">{{actor.name}}</h1><h4 ng-show="actorDetail.birthday">Born {{actorDetail.birthday | date: 'd MMMM yyyy'}} in {{actorDetail.place_of_birth}}</h4>
-			<span>{{actorDetail.biography}}</span>
+			<span class="bio">{{actorDetail.biography}}</span>
 		</div>
 		<hr>
 		<ul class="knownFor" ng-controller="MoviesController as moviesCtrl">

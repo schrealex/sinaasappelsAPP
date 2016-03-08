@@ -1,22 +1,18 @@
-$(function () {
-    $('.backdrop img:first').css({ opacity: 1.0 });
-    $('.backdrop img').css({ opacity : 0.0 });
-
-    slideShow();
+$(document).ready(function() {
+    setTimeout(function() {
+        $('img.shown').show();
+        slideShow();
+    }, 1000);
 });
 
 function slideShow() {
-
     setInterval('gallery()', 5000);
 }
 
 function gallery() {
-    var current = ($('.backdrop img.show') ? $('.backdrop img.show') : $('.backdrop img').first());
-    var next = ((current.next().length) ? ((current.next().hasClass('caption')) ? $('.backdrop img').first() : current.next()) : $('.backdrop img').first());
+    var current = ($('.backdrop img.shown') ? $('.backdrop img.shown') : $('.backdrop img').first());
+    var next = ((current.next().length) ? ((current.next().hasClass('shown')) ? $('.backdrop img').first() : current.next()) : $('.backdrop img').first());
 
-    next.css({ opacity: 0.0 })
-        .addClass('show')
-        .animate({ opacity: 1.0 }, 1000);
-
-    current.animate({ opacity: 0.0 }, 1000).removeClass('show');
+    next.fadeIn(1000).addClass('shown');
+    current.fadeOut(100).removeClass('shown');
 }

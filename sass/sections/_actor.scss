@@ -1,9 +1,18 @@
 .info-container {
+  .actor.poster {
+    display: inline-block;
+    width: 18%;
+  }
+
   .details {
     margin: 0 0 0 10px;
-    width: 50%;
+    width: 80%;
     display: inline-block;
     vertical-align: top;
+
+    h1 {
+      margin-left: 0;
+    }
   }
 
   .knownFor li {

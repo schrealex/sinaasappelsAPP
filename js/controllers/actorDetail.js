@@ -10,18 +10,15 @@ actorDetailController.controller('ActorDetailController', ['$scope', '$routePara
 
 				ActorDetails(actorSearchResults.data.results[0].id, appelsAPPConfig)
 					.then(function(actorResults){
-						console.log(actorResults.data)
 						$scope.actorDetail = actorResults.data;
 					});
 
 				MovieCredits(actorSearchResults.data.results[0].id, appelsAPPConfig)
 					.then(function(creditsResults){
-						console.log(creditsResults.data)
 						$scope.movieCredits = creditsResults.data;
 
 						MovieImages(creditsResults.data.cast[1].id, appelsAPPConfig)
 							.then(function(imagesResults){
-								console.log(imagesResults.data.backdrops)
 								$scope.movieBackdrops = imagesResults.data.backdrops;
 							});
 					});

@@ -100,11 +100,17 @@ h4 {
   border-left: 1px solid #6b6b6b;
   float: left; }
 
+.info-container .actor.poster {
+  display: inline-block;
+  width: 18%; }
+
 .info-container .details {
   margin: 0 0 0 10px;
-  width: 50%;
+  width: 80%;
   display: inline-block;
   vertical-align: top; }
+  .info-container .details h1 {
+    margin-left: 0; }
 
 .info-container .knownFor li {
   display: inline-block; }
