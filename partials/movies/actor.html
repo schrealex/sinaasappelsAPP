@@ -1,10 +1,10 @@
 <div ng-controller="ActorDetailController">
 
 	<div class="backdrop">
-		<img ng-repeat="backdrop in movieBackdrops" ng-src="{{ backdrop.file_path ? 'https://image.tmdb.org/t/p/w1000' + backdrop.file_path : '' }}" style="display: none; "/>
+		<img ng-repeat="backdrop in movieBackdrops" ng-src="{{ backdrop.file_path ? 'https://image.tmdb.org/t/p/w1000' + backdrop.file_path : '' }}" />
 	</div>
 
-	<div class="infoContainer">
+	<div class="info-container">
 		<div class="poster">
 			<img ng-src="{{ actor.profile_path.length ? 'https://image.tmdb.org/t/p/w185' + actor.profile_path : '/images/posterNotFound.png' }}"  />
 		</div>
@@ -27,28 +27,3 @@
 		</div>
 	</div>
 </div>
-
-<script>
-	$(document).ready(function () {
-		$('.backdrop img').css({ opacity : 0.0 });
-		$('.backdrop img:first').css({ opacity: 1.0 });
-
-		slideShow();
-	});
-
-	function slideShow() {
-
-		setInterval('gallery()', 5000);
-	}
-
-	function gallery() {
-		var current = ($('.backdrop img.show') ? $('.backdrop img.show') : $('.backdrop img').first());
-		var next = ((current.next().length) ? ((current.next().hasClass('caption')) ? $('.backdrop img').first() : current.next()) : $('.backdrop img').first());
-
-		next.css({ opacity: 0.0 })
-				.addClass('show')
-				.animate({ opacity: 1.0 }, 1000);
-
-		current.animate({ opacity: 0.0 }, 1000).removeClass('show');
-	}
-</script>

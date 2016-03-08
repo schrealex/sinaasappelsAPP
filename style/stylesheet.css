@@ -100,6 +100,24 @@ h4 {
   border-left: 1px solid #6b6b6b;
   float: left; }
 
+.info-container .details {
+  margin: 0 0 0 10px;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top; }
+
+.info-container .knownFor li {
+  display: inline-block; }
+
+.info-container .knownFor div {
+  width: 185px;
+  text-align: center;
+  margin: 0 10px 10px 10px; }
+
+.info-container .knownFor img {
+  width: 185px;
+  height: 250px; }
+
 .buttonContainer {
   width: 100%; }
   .buttonContainer a {

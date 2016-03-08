@@ -1,0 +1,23 @@
+.info-container {
+  .details {
+    margin: 0 0 0 10px;
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .knownFor li {
+    display: inline-block;
+  }
+
+  .knownFor div {
+    width: 185px;
+    text-align: center;
+    margin: 0 10px 10px 10px;
+  }
+
+  .knownFor img {
+    width: 185px;
+    height: 250px;
+  }
+}

@@ -13,21 +13,6 @@ h4 {
 	vertical-align: top;
 }
 
-.knownFor li {
-	display: inline-block;
-}
-
-.knownFor div {
-	width: 185px;
-	text-align: center;
-	margin: 0 10px 10px 10px;
-}
-
-.knownFor img {
-	width: 185px;
-	height: 250px;
-}
-
 .searchContainer input {
 	background-color: inherit;
 	width: 500px;
