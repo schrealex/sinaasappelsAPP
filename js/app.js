@@ -9,9 +9,11 @@ var appelsAPP = angular.module('appelsAPP', [
 	'actorsController',
 	'actorDetailController',
 	'searchMovieController',
+	'recommendController',
 	'settingService',
 	'movieServices',
 	'actorServices',
+	'recommendServices',
 	'gamesController',
 	'gameService'
 ]);
@@ -38,6 +40,10 @@ appelsAPP.config(['$routeProvider',
 	.when('/search', {
 	    templateUrl : 'partials/movies/search.html',
 	    controller : 'SearchMovieController'
+	})
+	.when('/recommend', {
+		templateUrl : 'partials/movies/recommend.html',
+		controller : 'RecommendController'
 	})
 	.when('/games', {
 	    templateUrl : 'games/games.html',

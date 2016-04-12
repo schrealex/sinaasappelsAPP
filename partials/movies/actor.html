@@ -10,7 +10,7 @@
 		</div>
 		<div class="details">
 			<h1 class="slideInDown animated">{{actor.name}}</h1><h4 ng-show="actorDetail.birthday">Born {{actorDetail.birthday | date: 'd MMMM yyyy'}} in {{actorDetail.place_of_birth}}</h4>
-			<span class="bio">{{actorDetail.biography}}</span>
+			<span ng-bind-html="biography" class="bio"></span>
 		</div>
 		<hr>
 		<ul class="knownFor" ng-controller="MoviesController as moviesCtrl">
@@ -21,6 +21,7 @@
 				</div>
 			</li>
 		</ul>
+
 
 		<div class="buttonContainer">
 			<a href="/#/" class="btn"><i class="fa fa-arrow-circle-left"></i> BACK</a>

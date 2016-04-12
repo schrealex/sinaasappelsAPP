@@ -1,0 +1,13 @@
+<div ng-controller="RecommendController as recommend">
+    <div class="info-container">
+        <button ng-click="recommend.recommend()">RECOMMEND</button>
+
+        <div class="poster">
+            <img ng-src="{{ recommendation.poster_path.length ? 'https://image.tmdb.org/t/p/w185' + recommendation.poster_path : '/images/posterNotFound.png' }}" />
+        </div>
+        <div class="information">
+            {{recommendation.title}}
+            {{recommendation.vote_average}}
+        </div>
+    </div>
+</div>

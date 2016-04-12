@@ -2,8 +2,8 @@
 
 var actorDetailController = angular.module('actorDetailController', []);
 
-actorDetailController.controller('ActorDetailController', ['$scope', '$routeParams', 'ActorSearch', 'ActorDetails', 'MovieCredits', 'MovieImages', 'appelsAPPConfig',
-    function($scope, $routeParams, ActorSearch, ActorDetails, MovieCredits, MovieImages, appelsAPPConfig) {
+actorDetailController.controller('ActorDetailController', ['$scope', '$sce', '$routeParams', 'ActorSearch', 'ActorDetails', 'MovieCredits', 'MovieImages', 'appelsAPPConfig',
+    function($scope, $sce, $routeParams, ActorSearch, ActorDetails, MovieCredits, MovieImages, appelsAPPConfig) {
 		ActorSearch($routeParams.name, appelsAPPConfig)
 			.then(function(actorSearchResults){
 				$scope.actor = actorSearchResults.data.results[0];
@@ -11,13 +11,14 @@ actorDetailController.controller('ActorDetailController', ['$scope', '$routePara
 				ActorDetails(actorSearchResults.data.results[0].id, appelsAPPConfig)
 					.then(function(actorResults){
 						$scope.actorDetail = actorResults.data;
+						$scope.biography = $sce.trustAsHtml(actorResults.data.biography);
 					});
 
 				MovieCredits(actorSearchResults.data.results[0].id, appelsAPPConfig)
 					.then(function(creditsResults){
 						$scope.movieCredits = creditsResults.data;
-
-						MovieImages(creditsResults.data.cast[1].id, appelsAPPConfig)
+						var randomId = Math.floor((Math.random() * creditsResults.data.cast.length) + 1);
+						MovieImages(creditsResults.data.cast[randomId].id, appelsAPPConfig)
 							.then(function(imagesResults){
 								$scope.movieBackdrops = imagesResults.data.backdrops;
 							});
