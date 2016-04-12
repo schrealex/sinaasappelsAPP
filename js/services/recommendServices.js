@@ -6,9 +6,9 @@ recommendServices.factory('RecommendMovie', ['$http',
     function RecommendMovie($http) {
         return function(appelsAPPConfig) {
 
-            var randomize = function(amount) {
+            function randomize(amount) {
                 return Math.ceil(Math.random() * amount);
-            };
+            }
 
             function pad(value) {
                 return (value < 10) ? '0' + value : value;
@@ -22,7 +22,7 @@ recommendServices.factory('RecommendMovie', ['$http',
             var options = {
                 // 'include_adult'                 : true,
                 // 'include_video'                 : true,
-                'page'                          : 5
+                'page'                          : randomize(1000)
                 // 'primary_release_year'          : new Date().getFullYear(),
                 // 'primary_release_date.gte'      : getCurrentDateFormatted(),
                 // 'primary_release_date.lte'      : getCurrentDateFormatted(),
