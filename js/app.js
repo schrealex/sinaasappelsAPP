@@ -12,6 +12,7 @@ var appelsAPP = angular.module('appelsAPP', [
 	'recommendController',
 	'settingService',
 	'movieServices',
+	'genreServices',
 	'actorServices',
 	'recommendServices',
 	'gamesController',

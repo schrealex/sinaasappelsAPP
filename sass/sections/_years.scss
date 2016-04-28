@@ -1,0 +1,14 @@
+.yearsList {
+  list-style-type: none;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-position: inside;
+
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.yearsList.ng-hide {
+  opacity: 0;
+}

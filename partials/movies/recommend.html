@@ -1,13 +1,39 @@
 <div ng-controller="RecommendController as recommend">
     <div class="info-container">
-        <button ng-click="recommend.recommend()">RECOMMEND</button>
+
+        <a ng-click="showGenreList = ! showGenreList">Genres</a>
+        <ul class="genreList" ng-show="showGenreList">
+            <li ng-repeat="genre in genres">
+                <span><input type="checkbox" ng-model="selection.genres[genre.id]" id="{{genre.name}}" /> {{genre.name}}</span>
+            </li>
+        </ul>
+
+        <a ng-click="showYearsList = ! showYearsList">Years</a>
+        <ul class="yearsList" ng-show="showYearsList">
+            <li ng-repeat="(year, description) in years">
+                <span><input type="checkbox" ng-model="selection.years[year]" ng-click="selectYear(year)" id="{{year}}" /> &#39;{{description}}</span>
+            </li>
+        </ul>
+
+        <a ng-click="showRatingsList = ! showRatingsList">Ratings</a>
+        <ul class="ratingsList" ng-show="showRatingsList">
+            <li ng-repeat="(rating, rating) in ratings">
+                <span><input type="checkbox" ng-model="selection.rating[rating]" ng-click="selectRating(rating)" id="{{rating}}" /> {{rating}}</span>
+            </li>
+        </ul>
+
+        <span>Include adult: <input type="checkbox" ng-model="selection.adult" id="adult" /></span>
+        <span>High-rated movies: <input type="checkbox" ng-model="selection.popular" id="popular" /></span>
+
+        <button ng-click="recommend()">RECOMMEND</button>
 
         <div class="poster">
             <img ng-src="{{ recommendation.poster_path.length ? 'https://image.tmdb.org/t/p/w185' + recommendation.poster_path : '/images/posterNotFound.png' }}" />
         </div>
         <div class="information">
-            {{recommendation.title}}
+            {{recommendation.title}} {{recommendation.release_date | date : 'yyyy' }}
             {{recommendation.vote_average}}
+            {{getMovieGenres(recommendation.genre_ids)}}
         </div>
     </div>
 </div>

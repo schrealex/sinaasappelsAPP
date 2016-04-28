@@ -1,3 +1,7 @@
+.list {
+  list-style-type: none;
+  list-style-position: inside; }
+
 html, body {
   background-color: #000;
   color: #FFF;
@@ -54,6 +58,18 @@ h4 {
     display: inline-block; }
     .movieList .poster img {
       width: 100px; }
+
+.genreList {
+  list-style-type: none;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-position: inside;
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s; }
+
+.genreList.ng-hide {
+  opacity: 0; }
 
 .info-container {
   max-width: 1032px;
