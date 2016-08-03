@@ -15,10 +15,12 @@ searchMovieController.controller('SearchMovieController', ['$scope', '$location'
 	    };
 	    
 	    function fetch() {
-	    	SearchOmdbApiMovies($scope.search, appelsAPPConfig)
-	    	.success(function(data) {
+	    	SearchOmdbApiMovies.getMovies($scope.search)
+	    	.then(function(data) {
 	    		$scope.movies = data.Search;
-	    	});
+	    	}, function(error) {
+				console.log('error', error);
+			});
 	    }
 	    
 	    $scope.go = function(path) {

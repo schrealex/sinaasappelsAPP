@@ -29,24 +29,44 @@ movieServices.factory('SearchMovies', ['$http',
     }
 ]);
 
-movieServices.factory('SearchOmdbApiMovies', ['$http', 
-    function SearchOmdbApiMovies($http) {
-        return function(title, appelsAPPConfig) {
-              var searchTitle = title.replace(/ /g, '%20');
-          var url = "http://www.omdbapi.com/?&s=" + searchTitle;
-          console.log(url);
+movieServices.factory('SearchOmdbApiMovies', function SearchOmdbApiMovies($http, $q) {
+    return {
+         getMovies : function (title) {
+            var searchTitle = title.replace(/ /g, '%20');
+            var url = "http://www.omdbapi.com/?&s=" + searchTitle;
+            console.log(url);
             return $http.get(url)
-            .success(function(data) {
-                console.log('Data: ' + data);
-                return data; 
-            }) 
-            .error(function(error) {
-              console.log('Error: ' + error);
-                return error; 
-            }); 
-        };
-    }
-]);
+                .then(function(response) {
+                    if (typeof response.data === 'object') {
+                        return response.data;
+                    } else {
+                        return $q.reject(response.data);
+                    }
+                }, function(response) {
+                    return $q.reject(response.data);
+                });
+        }
+    };
+});
+
+// movieServices.factory('SearchOmdbApiMovies', ['$http',
+//     function SearchOmdbApiMovies($http) {
+//         return function(title, appelsAPPConfig) {
+//               var searchTitle = title.replace(/ /g, '%20');
+//           var url = "http://www.omdbapi.com/?&s=" + searchTitle;
+//           console.log(url);
+//             return $http.get(url)
+//             .success(function(data) {
+//                 console.log('Data: ' + data);
+//                 return data;
+//             })
+//             .error(function(error) {
+//               console.log('Error: ' + error);
+//                 return error;
+//             });
+//         };
+//     }
+// ]);
 
 movieServices.factory('MovieInfo', ['$http', 
     function MovieInfo($http) {

@@ -2,6 +2,25 @@
 
 var actorServices = angular.module('actorServices', []);
 
+movieServices.factory('ActorSearch', function SearchOmdbApiMovies($http, $q) {
+    return {
+        getActor : function (actorName, appelsAPPConfig) {
+            var searchActorName = actorName.replace(/ /g, '%20');
+            var url = "http://api.themoviedb.org/3/search/person?api_key=" + appelsAPPConfig.apiKey + "&query=" + searchActorName;
+            return $http.get(url)
+                .then(function(response) {
+                    if (typeof response.data === 'object') {
+                        return response.data;
+                    } else {
+                        return $q.reject(response.data);
+                    }
+                }, function(response) {
+                    return $q.reject(response.data);
+                });
+        }
+    };
+});
+
 actorServices.factory('ActorSearch', ['$http',
     function ActorSearch($http) {
         return function(actorName, appelsAPPConfig) {

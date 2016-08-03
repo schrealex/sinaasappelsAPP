@@ -4,6 +4,14 @@ var actorDetailController = angular.module('actorDetailController', []);
 
 actorDetailController.controller('ActorDetailController', ['$scope', '$sce', '$routeParams', 'ActorSearch', 'ActorDetails', 'MovieCredits', 'MovieImages', 'appelsAPPConfig',
     function($scope, $sce, $routeParams, ActorSearch, ActorDetails, MovieCredits, MovieImages, appelsAPPConfig) {
+		ActorSearch.getActor($routeParams.name, appelsAPPConfig)
+			.then(function(actorSearchResults) {
+				$scope.movies = data.Search;
+			}, function(error) {
+				console.log('error', error);
+			});
+
+
 		ActorSearch($routeParams.name, appelsAPPConfig)
 			.then(function(actorSearchResults){
 				$scope.actor = actorSearchResults.data.results[0];
